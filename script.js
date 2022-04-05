@@ -1,9 +1,15 @@
 const etchContainer = document.querySelector("#etch-container");
 
-for (i = 0; i < 256; i++) {
+function makeDivs(gridSquares) {
+for (i = 0; i < (gridSquares ** 2); i++) {
     const div = document.createElement('div');
     etchContainer.appendChild(div);
 }
+  etchContainer.style.gridTemplateColumns = `repeat(${gridSquares}, auto)`;
+  etchContainer.style.gridTemplateRows = `repeat(${gridSquares}, auto)`;
+};
+
+makeDivs(16);
 
 const divs = etchContainer.querySelectorAll('div');
 divs.forEach((div) => {
@@ -16,23 +22,11 @@ const clearBtn = document.createElement('button');
 clearBtn.textContent = 'New Grid';
 document.body.appendChild(clearBtn);
 
-clearBtn.addEventListener('click', () => {
-
+clearBtn.addEventListener('click',function () {
     divs.forEach((div) => {
-        div.style.backgroundColor = 'white';
+        etchContainer.removeChild(div);
     });
-
-//Event not working below this line
-    etchContainer.removeChild(divs);
-
-    let newGridNum = parseInt(prompt('How many squares per row?'));
-    
-    for(i = 0; i < (newGridNum ** 2); i++) {
-        const div = document.createElement('div');
-        etchContainer.appendChild(div);
-    }
+    makeDivs(parseInt(prompt('How many squares per row?')));
 });
 
-
-//On button click:
-//All existing divs are cleared (so that new divs aren't created in addition to old divs)
+// Button event makes new divs, but only works once and divs lack color-change event

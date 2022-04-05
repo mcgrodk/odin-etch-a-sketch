@@ -2,9 +2,6 @@
     margin: 0;
 	padding: 0;
 	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
 }
 
 body {
@@ -16,12 +13,10 @@ body {
 
 #etch-container {
 	border: 2px solid red;
-	display: grid;
 	height: 400px;
 	width: 400px;
-	grid-template-columns: repeat(16, auto);
-	grid-template-rows: repeat(16, auto);
 	margin: 2rem 0 2rem 0;
+	display: grid;
 }
 
 div {
