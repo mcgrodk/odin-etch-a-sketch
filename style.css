@@ -12,9 +12,9 @@ body {
 }
 
 #etch-container {
-	border: 2px solid red;
-	height: 400px;
-	width: 400px;
+	border: 5px solid red;
+	height: 450px;
+	width: 450px;
 	margin: 2rem 0 2rem 0;
 	display: grid;
 }
@@ -23,10 +23,23 @@ div {
 	border: 0.5px solid gray;
 }
 
+#button-container {
+	border: none;
+	width: 450px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
 button {
 	padding: 0.5rem 1rem;
 	background-color: red;
 	color: white;
+	font-weight: bold;
 	border-radius: 2px;
+}
+
+button:hover {
+	background-color: rgb(141, 2, 2);
 }
 
