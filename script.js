@@ -11,8 +11,7 @@ function makeDivs(gridSquares) {
 for (i = 0; i < (gridSquares ** 2); i++) {
     const div = document.createElement('div');
     etchContainer.appendChild(div);
-};
-};
+}}
 
 function formGrid(gridSquares) {
   
